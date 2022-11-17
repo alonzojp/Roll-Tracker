@@ -24,6 +24,13 @@ public class ArknightsController {
     Label pullsLabel;
     @FXML
     TextField orundumTextField;
+    @FXML
+    TextField originitePrimeTextField;
+    @FXML
+    TextField yellowCertificatesTextField;
+    @FXML
+    TextField headhuntingPermitsTextField;
+
 
     public void switchToHomeView(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("HomeView.fxml"));
@@ -34,6 +41,23 @@ public class ArknightsController {
     }
 
     public void updateRollsLabel(ActionEvent event) throws IOException {
-        pullsLabel.setText(orundumTextField.getText());
+        String orundumCount = orundumTextField.getText();
+        String originitePrimeCount = originitePrimeTextField.getText();
+        String yellowCertificatesCount = yellowCertificatesTextField.getText();
+        String headhuntingPermitsCount = headhuntingPermitsTextField.getText();
+
+        int totalPulls = 0;
+        try {
+            totalPulls += Math.round(Integer.parseInt(orundumCount)/600);
+            totalPulls += Math.round((Integer.parseInt(originitePrimeCount) * 180)/600);
+            totalPulls += Math.round(Integer.parseInt(yellowCertificatesCount)/6.789);
+            totalPulls += Math.round(Integer.parseInt(headhuntingPermitsCount));
+
+            pullsLabel.setText("Pulls: " + totalPulls);
+        }
+        catch (NumberFormatException e) {
+            pullsLabel.setText("Are you sure about that?");
+        }
+
     }
 }
