@@ -27,9 +27,9 @@ public class ArknightsController {
     @FXML
     TextField originitePrimeTextField;
     @FXML
-    TextField yellowCertificatesTextField;
+    TextField distinctionCertificateTextField;
     @FXML
-    TextField headhuntingPermitsTextField;
+    TextField headhuntingPermitTextField;
 
 
     public void switchToHomeView(ActionEvent event) throws IOException {
@@ -43,8 +43,8 @@ public class ArknightsController {
     public void updateRollsLabel(ActionEvent event) throws IOException {
         String orundumCount = orundumTextField.getText();
         String originitePrimeCount = originitePrimeTextField.getText();
-        String yellowCertificatesCount = yellowCertificatesTextField.getText();
-        String headhuntingPermitsCount = headhuntingPermitsTextField.getText();
+        String yellowCertificatesCount = distinctionCertificateTextField.getText();
+        String headhuntingPermitsCount = headhuntingPermitTextField.getText();
 
         int totalPulls = 0;
         try {
@@ -53,7 +53,7 @@ public class ArknightsController {
             totalPulls += Math.round(Integer.parseInt(yellowCertificatesCount)/6.789);
             totalPulls += Math.round(Integer.parseInt(headhuntingPermitsCount));
 
-            pullsLabel.setText("Pulls: " + totalPulls);
+            pullsLabel.setText("Calculated Pulls: " + totalPulls);
         }
         catch (NumberFormatException e) {
             pullsLabel.setText("Are you sure about that?");
