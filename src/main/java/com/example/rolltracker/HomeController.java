@@ -57,7 +57,6 @@ public class HomeController {
 
         blueArchiveLabel.setText(blueArchiveArray[2]);
         blueArchiveLabel2.setText("Pulls:" + blueArchiveArray[1]);
-
     }
 
     public void switchToArknightsView(ActionEvent event) throws IOException {

@@ -10,10 +10,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Calendar;
@@ -28,6 +25,43 @@ public class BlueArchiveController {
     @FXML
     TextField pyroxeneTextField;
     String resultLine = "";
+
+    @FXML
+    Label arknightsLabel;
+    @FXML
+    Label arknightsLabel2;
+    @FXML
+    Label blueArchiveLabel;
+    @FXML
+    Label blueArchiveLabel2;
+
+    String arknightsArray[];
+    String blueArchiveArray[];
+    public void initialize() throws IOException {
+        BufferedReader input = new BufferedReader(new FileReader("arknightsTracker.txt"));
+        String lastLine = "";
+        String currentLine = "";
+
+        while ((currentLine = input.readLine()) != null) {
+            lastLine = currentLine;
+        }
+
+        arknightsArray = lastLine.split(",", 0);
+
+        arknightsLabel.setText(arknightsArray[5]);
+        arknightsLabel2.setText("Pulls:" + arknightsArray[4]);
+
+        BufferedReader input2 = new BufferedReader(new FileReader("blueArchiveTracker.txt"));
+
+        while ((currentLine = input2.readLine()) != null) {
+            lastLine = currentLine;
+        }
+
+        blueArchiveArray = lastLine.split(",", 0);
+
+        blueArchiveLabel.setText(blueArchiveArray[2]);
+        blueArchiveLabel2.setText("Pulls:" + blueArchiveArray[1]);
+    }
 
     public void updateRollsLabel(ActionEvent event) throws IOException {
         resultLine = "";
