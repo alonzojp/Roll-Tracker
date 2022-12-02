@@ -29,7 +29,6 @@ public class BlueArchiveController {
     TextField pyroxeneTextField;
     String resultLine = "";
 
-
     public void updateRollsLabel(ActionEvent event) throws IOException {
         resultLine = "";
 
@@ -42,9 +41,15 @@ public class BlueArchiveController {
 
         System.out.println(Arrays.toString(resultLine.split(",", 0)));
 
-        int totalPulls = 0;
+        double totalPulls = 0;
+        int totalPullsInt = 0;
         try {
-            totalPulls += Math.round(Integer.parseInt(pyroxeneCount)/120);
+            Integer.parseInt(pyroxeneCount);
+
+            totalPulls = ((Double.parseDouble(pyroxeneCount))/120.0);
+
+            totalPulls = Math.floor(totalPulls);
+            totalPullsInt = (int) totalPulls;
 
             resultLine = pyroxeneCount + ", " +
                     totalPulls  + ", " +
@@ -56,7 +61,7 @@ public class BlueArchiveController {
             output.append(resultLine);
             output.close();
 
-            pullsLabel.setText("Calculated Pulls: " + totalPulls);
+            pullsLabel.setText("Calculated Pulls: " + totalPullsInt);
         }
         catch (NumberFormatException e) {
             pullsLabel.setText("Invalid Input.");

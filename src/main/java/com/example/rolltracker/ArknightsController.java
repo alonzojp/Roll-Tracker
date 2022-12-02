@@ -65,28 +65,37 @@ public class ArknightsController {
 
         String orundumCount = orundumTextField.getText();
         String originitePrimeCount = originitePrimeTextField.getText();
-        String yellowCertificatesCount = distinctionCertificateTextField.getText();
         String headhuntingPermitsCount = headhuntingPermitTextField.getText();
+        String yellowCertificatesCount = distinctionCertificateTextField.getText();
 
         Date date = new Date();
         SimpleDateFormat currentDate = new SimpleDateFormat("YYYY-MM-dd");
         String dateNow = currentDate.format(date);
         String timeNow = new SimpleDateFormat("HH:mm:ss").format(Calendar.getInstance().getTime());
 
-        System.out.println(Arrays.toString(resultLine.split(",", 0)));
+        // System.out.println(Arrays.toString(resultLine.split(",", 0)));
 
-        int totalPulls = 0;
+        double totalPulls = 0;
+        int totalPullsInt = 0;
         try {
-            totalPulls += Math.round(Integer.parseInt(orundumCount)/600);
-            totalPulls += Math.round((Integer.parseInt(originitePrimeCount) * 180)/600);
-            totalPulls += Math.round(Integer.parseInt(headhuntingPermitsCount));
-            totalPulls += Math.round(Integer.parseInt(yellowCertificatesCount)/(258/38));
+            Integer.parseInt(orundumCount);
+            Integer.parseInt(originitePrimeCount);
+            Integer.parseInt(headhuntingPermitsCount);
+            Integer.parseInt(yellowCertificatesCount);
+
+            totalPulls = ((Double.parseDouble(orundumCount))/600.0) +
+                         ((Double.parseDouble(originitePrimeCount) * 180)/600.0) +
+                         ((Double.parseDouble(headhuntingPermitsCount))) +
+                         ((Double.parseDouble(yellowCertificatesCount))/(258.0/38.0));
+
+            totalPulls = Math.floor(totalPulls);
+            totalPullsInt = (int) totalPulls;
 
             resultLine = orundumCount + ", " +
                     originitePrimeCount + ", " +
                     headhuntingPermitsCount  + ", " +
                     yellowCertificatesCount  + ", " +
-                    totalPulls  + ", " +
+                    totalPullsInt  + ", " +
                     dateNow + ", " +
                     timeNow;
 
@@ -95,7 +104,7 @@ public class ArknightsController {
             output.append(resultLine);
             output.close();
 
-            pullsLabel.setText("Calculated Pulls: " + totalPulls);
+            pullsLabel.setText("Calculated Pulls: " + totalPullsInt);
         }
         catch (NumberFormatException e) {
             pullsLabel.setText("Invalid Input.");
