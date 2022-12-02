@@ -40,8 +40,24 @@ public class ArknightsController {
 
     String resultLine = "";
     String[] resultArray;
-    public void switchToHomeView(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("HomeView.fxml"));
+    public void switchToArknightsView(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("ArknightsView.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void switchToBlueArchiveView(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("BlueArchiveView.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void switchToProjectSekaiView(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("ProjectSekaiView.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -67,13 +83,13 @@ public class ArknightsController {
         try {
             totalPulls += Math.round(Integer.parseInt(orundumCount)/600);
             totalPulls += Math.round((Integer.parseInt(originitePrimeCount) * 180)/600);
-            totalPulls += Math.round(Integer.parseInt(yellowCertificatesCount)/(258/38));
             totalPulls += Math.round(Integer.parseInt(headhuntingPermitsCount));
+            totalPulls += Math.round(Integer.parseInt(yellowCertificatesCount)/(258/38));
 
             resultLine = orundumCount + ", " +
                     originitePrimeCount + ", " +
-                    yellowCertificatesCount  + ", " +
                     headhuntingPermitsCount  + ", " +
+                    yellowCertificatesCount  + ", " +
                     totalPulls  + ", " +
                     dateNow + ", " +
                     timeNow;

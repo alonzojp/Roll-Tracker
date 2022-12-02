@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.rolltracker.HomeController">
+    <children>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#828282" height="125.0" layoutX="-21.0" stroke="#828282" strokeType="INSIDE" width="642.0" />
+        <ImageView fitHeight="75.0" fitWidth="75.0" layoutX="14.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@Arknights_Icon.png" />
+            </image></ImageView>
+        <Button fx:id="arknightsButton" onAction="#switchToArknightsView" layoutX="18.0" layoutY="87.0" mnemonicParsing="false" text="Arknights" />
+        <ImageView fitHeight="75.0" fitWidth="75.0" layoutX="114.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@BlueArchive_Icon.png" />
+            </image>
+        </ImageView>
+        <Button fx:id="blueArchiveButton" onAction="#switchToBlueArchiveView" layoutX="111.0" layoutY="87.0" mnemonicParsing="false" text="Blue Archive" />
+        <ImageView fitHeight="75.0" fitWidth="75.0" layoutX="214.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@ProjectSekai_Icon.png" />
+            </image>
+        </ImageView>
+        <Button fx:id="projectSekaiButton" onAction="#switchToProjectSekaiView" layoutX="210.0" layoutY="87.0" mnemonicParsing="false" text="Project Sekai" />
+    </children>
+</AnchorPane>

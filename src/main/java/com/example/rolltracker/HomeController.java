@@ -26,4 +26,20 @@ public class HomeController {
         stage.setScene(scene);
         stage.show();
     }
+
+    public void switchToBlueArchiveView(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("BlueArchiveView.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void switchToProjectSekaiView(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("ProjectSekaiView.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
 }

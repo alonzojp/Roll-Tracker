@@ -3,40 +3,52 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.rolltracker.ArknightsController">
    <children>
-      <TextField fx:id="orundumTextField" layoutX="261.0" layoutY="95.0" promptText="Orundum" />
-      <Button fx:id="returnButton" layoutX="534.0" layoutY="360.0" mnemonicParsing="false" onAction="#switchToHomeView" text="Return" />
+      <TextField fx:id="orundumTextField" layoutX="111.0" layoutY="218.0" promptText="Orundum" />
       <Label fx:id="pullsLabel" layoutX="410.0" layoutY="325.0" text=" " textAlignment="CENTER" />
-      <TextField fx:id="originitePrimeTextField" layoutX="262.0" layoutY="159.0" promptText="Originite Prime" />
-      <TextField fx:id="distinctionCertificateTextField" layoutX="261.0" layoutY="221.0" promptText="Distinction Certificates" />
-      <TextField fx:id="headhuntingPermitTextField" layoutX="261.0" layoutY="282.0" promptText="Headhunting Permits" />
-      <Button fx:id="submitButton" layoutX="261.0" layoutY="321.0" mnemonicParsing="false" onAction="#updateRollsLabel" text="Submit" />
-      <ImageView fx:id="orundumImage" fitHeight="50.0" fitWidth="50.0" layoutX="189.0" layoutY="84.0" pickOnBounds="true" preserveRatio="true">
+      <TextField fx:id="originitePrimeTextField" layoutX="111.0" layoutY="279.0" promptText="Originite Prime" />
+      <TextField fx:id="distinctionCertificateTextField" layoutX="397.0" layoutY="274.0" promptText="Distinction Certificates" />
+      <TextField fx:id="headhuntingPermitTextField" layoutX="397.0" layoutY="212.0" promptText="Headhunting Permits" />
+      <Button fx:id="submitButton" alignment="CENTER" layoutX="273.0" layoutY="330.0" mnemonicParsing="false" text="Submit" />
+      <ImageView fx:id="orundumImage" fitHeight="50.0" fitWidth="50.0" layoutX="53.0" layoutY="207.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Orundum.png" />
          </image></ImageView>
-      <ImageView fx:id="originitePrimeImage" fitHeight="50.0" fitWidth="50.0" layoutX="189.0" layoutY="147.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="originitePrimeImage" fitHeight="50.0" fitWidth="50.0" layoutX="53.0" layoutY="267.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Originite_Prime.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="distinctionCertificateImage" fitHeight="50.0" fitWidth="50.0" layoutX="189.0" layoutY="209.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="distinctionCertificateImage" fitHeight="50.0" fitWidth="50.0" layoutX="343.0" layoutY="262.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Distinction_Certificate.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="headhuntingPermitImage" fitHeight="50.0" fitWidth="50.0" layoutX="188.0" layoutY="275.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="headhuntingPermitImage" fitHeight="50.0" fitWidth="50.0" layoutX="342.0" layoutY="206.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Headhunting_Permit.png" />
          </image>
       </ImageView>
-      <Label layoutX="216.0" layoutY="25.0" text="Please Enter:">
-         <font>
-            <Font size="30.0" />
-         </font>
-      </Label>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#828282" height="125.0" layoutX="-21.0" stroke="#828282" strokeType="INSIDE" width="642.0" />
+      <ImageView fitHeight="75.0" fitWidth="75.0" layoutX="14.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Arknights_Icon.png" />
+         </image></ImageView>
+      <Button fx:id="arknightsButton" onAction="#switchToArknightsView" layoutX="18.0" layoutY="87.0" mnemonicParsing="false" text="Arknights" />
+      <ImageView fitHeight="75.0" fitWidth="75.0" layoutX="114.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@BlueArchive_Icon.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="blueArchiveButton" onAction="#switchToBlueArchiveView" layoutX="111.0" layoutY="87.0" mnemonicParsing="false" text="Blue Archive" />
+      <ImageView fitHeight="75.0" fitWidth="75.0" layoutX="214.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@ProjectSekai_Icon.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="projectSekaiButton" onAction="#switchToProjectSekaiView" layoutX="210.0" layoutY="87.0" mnemonicParsing="false" text="Project Sekai" />
    </children>
 </AnchorPane>
