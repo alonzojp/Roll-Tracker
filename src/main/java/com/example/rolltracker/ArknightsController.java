@@ -12,10 +12,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Calendar;
@@ -39,7 +36,6 @@ public class ArknightsController {
     TextField headhuntingPermitTextField;
 
     String resultLine = "";
-    String[] resultArray;
     public void switchToArknightsView(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("ArknightsView.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -94,19 +90,15 @@ public class ArknightsController {
                     dateNow + ", " +
                     timeNow;
 
-            // resultArray = resultLine.split(",", 0);
-
-            try(PrintWriter output = new PrintWriter(new FileWriter("arknightsTracker.txt",true)))
-            {
-                output.printf("%s\r\n", resultLine);
-            }
-            catch (Exception e) {}
+            BufferedWriter output = new BufferedWriter(new FileWriter("arknightsTracker.txt", true));
+            output.newLine();
+            output.append(resultLine);
+            output.close();
 
             pullsLabel.setText("Calculated Pulls: " + totalPulls);
         }
         catch (NumberFormatException e) {
-            pullsLabel.setText("Are you sure about that?");
+            pullsLabel.setText("Invalid Input.");
         }
-
-    }
+    } // end updateRollsLabel
 }
