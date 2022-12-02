@@ -13,19 +13,23 @@
          <image>
             <Image url="@Arknights_Icon.png" />
          </image></ImageView>
-      <Button fx:id="arknightsButton" onAction="#switchToArknightsView" layoutX="18.0" layoutY="87.0" mnemonicParsing="false" text="Arknights" />
+      <Button fx:id="arknightsButton" layoutX="18.0" layoutY="87.0" mnemonicParsing="false" onAction="#switchToArknightsView" text="Arknights" />
       <ImageView fitHeight="75.0" fitWidth="75.0" layoutX="114.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@BlueArchive_Icon.png" />
          </image>
       </ImageView>
-      <Button fx:id="blueArchiveButton" onAction="#switchToBlueArchiveView" layoutX="111.0" layoutY="87.0" mnemonicParsing="false" text="Blue Archive" />
+      <Button fx:id="blueArchiveButton" layoutX="111.0" layoutY="87.0" mnemonicParsing="false" onAction="#switchToBlueArchiveView" text="Blue Archive" />
       <ImageView fitHeight="75.0" fitWidth="75.0" layoutX="214.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@ProjectSekai_Icon.png" />
          </image>
       </ImageView>
-      <Button fx:id="projectSekaiButton" onAction="#switchToProjectSekaiView" layoutX="210.0" layoutY="87.0" mnemonicParsing="false" text="Project Sekai" />
+      <Button fx:id="projectSekaiButton" layoutX="210.0" layoutY="87.0" mnemonicParsing="false" onAction="#switchToProjectSekaiView" text="Project Sekai" />
+      <Label fx:id="arknightsLabel" alignment="CENTER" layoutX="14.0" layoutY="132.0" prefHeight="18.0" prefWidth="75.0" />
+      <Label fx:id="arknightsLabel2" alignment="CENTER" layoutX="14.0" layoutY="150.0" prefHeight="18.0" prefWidth="75.0" />
+      <Label fx:id="blueArchiveLabel" alignment="CENTER" layoutX="114.0" layoutY="132.0" prefHeight="18.0" prefWidth="75.0" />
+      <Label fx:id="blueArchiveLabel2" alignment="CENTER" layoutX="114.0" layoutY="150.0" prefHeight="18.0" prefWidth="75.0" />
 
    </children>
 </AnchorPane>

@@ -39,8 +39,6 @@ public class BlueArchiveController {
         String dateNow = currentDate.format(date);
         String timeNow = new SimpleDateFormat("HH:mm:ss").format(Calendar.getInstance().getTime());
 
-        System.out.println(Arrays.toString(resultLine.split(",", 0)));
-
         double totalPulls = 0;
         int totalPullsInt = 0;
         try {
@@ -52,7 +50,7 @@ public class BlueArchiveController {
             totalPullsInt = (int) totalPulls;
 
             resultLine = pyroxeneCount + ", " +
-                    totalPulls  + ", " +
+                    totalPullsInt  + ", " +
                     dateNow + ", " +
                     timeNow;
 
