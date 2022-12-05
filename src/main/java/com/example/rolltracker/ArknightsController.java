@@ -141,6 +141,13 @@ public class ArknightsController {
             output.close();
 
             pullsLabel.setText("Calculated Pulls: " + totalPullsInt);
+
+            orundumTextField.setText("");
+            originitePrimeTextField.setText("");
+            headhuntingPermitTextField.setText("");
+            distinctionCertificateTextField.setText("");
+
+            initialize();
         }
         catch (NumberFormatException e) {
             pullsLabel.setText("Invalid Input.");

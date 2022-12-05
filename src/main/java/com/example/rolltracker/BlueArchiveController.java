@@ -94,6 +94,9 @@ public class BlueArchiveController {
             output.close();
 
             pullsLabel.setText("Calculated Pulls: " + totalPullsInt);
+
+            pyroxeneTextField.setText("");
+            initialize();
         }
         catch (NumberFormatException e) {
             pullsLabel.setText("Invalid Input.");
